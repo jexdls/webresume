@@ -2,7 +2,7 @@ import img1 from './pix/1.jpg';
 import img2 from './pix/2.jpg';
 import img3 from './pix/3.jpg';
 import './App.scss';
-import { Button, Overlay, Tooltip, Container, Modal} from 'react-bootstrap';
+import { Overlay, Tooltip, Container, Modal} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState, useRef, useEffect } from 'react';
 import ScrollingColorBackground from 'react-scrolling-color-background';
@@ -85,7 +85,7 @@ function isVanishAppear(topPoint, pos, botPoint){
   return (topPoint < pos && pos < botPoint);
 }
 
-function Greetings({}){
+function Greetings(){
   const[elementPosition, setElementPosition] = useState(true);
   const[domino1, setDomino1] = useState(false);
   const[domino2, setDomino2] = useState(false);
@@ -143,7 +143,7 @@ function Greetings({}){
 }
 
 
-function AboutMe({}){
+function AboutMe(){
   const[elementPosition, setElementPosition] = useState(true);
   const[domino1, setDomino1]= useState(false);
   const elementRef = useRef();
@@ -187,45 +187,45 @@ function AboutMe({}){
 }
 
 // react-bootstrap tooltip
-function PopupTimeout({timer, label}) {
-  const message ='clickie click';
-  const [show, setShow] = useState(false);
-  const target = useRef(null);
-  const [repeat, setRepeat] = useState(0);
+// function PopupTimeout({timer, label}) {
+//   const message ='clickie click';
+//   const [show, setShow] = useState(false);
+//   const target = useRef(null);
+//   const [repeat, setRepeat] = useState(0);
+// 
+//   useEffect(()=>{
+//     if (repeat <= 4)setTimeout(()=>setShow(true), timer)
+//   })
+//   return (
+//     <>
+//       <span ref={target} 
+//         onClick={()=>{
+//                     setShow(!show)
+//                     setRepeat(repeat+1)
+//                   }}>
+//               {label}   
+//       </span>
+//       <Overlay 
+//         target={target.current} 
+//         show={show} 
+//         placement="top">
+//         {(props) => (
+//           <Tooltip id="overlay-example" {...props}>
+//             {repeat > 3 ? 
+//               ":)" : 
+//               repeat > 2? 
+//                 "oh hi again" :
+//                  repeat <= 1 ? 
+//                    message : 
+//                   "this will be the last"}
+//           </Tooltip>
+//         )}
+//       </Overlay>
+//     </>
+//   );
+// }
 
-  useEffect(()=>{
-    if (repeat <= 4)setTimeout(()=>setShow(true), timer)
-  })
-  return (
-    <>
-      <span ref={target} 
-        onClick={()=>{
-                    setShow(!show)
-                    setRepeat(repeat+1)
-                  }}>
-              {label}   
-      </span>
-      <Overlay 
-        target={target.current} 
-        show={show} 
-        placement="top">
-        {(props) => (
-          <Tooltip id="overlay-example" {...props}>
-            {repeat > 3 ? 
-              ":)" : 
-              repeat > 2? 
-                "oh hi again" :
-                 repeat <= 1 ? 
-                   message : 
-                  "this will be the last"}
-          </Tooltip>
-        )}
-      </Overlay>
-    </>
-  );
-}
-
-function Skills({}){
+function Skills(){
   const[elementPosition, setElementPosition] = useState(true);
   const elementRef = useRef();
   const[domino1, setDomino1]= useState(false);
@@ -274,13 +274,13 @@ const initialClass = {
 
 function SpecItem({item, linkRefa1, linkRefb1}){
   const iconElement = 
-  item == "ReactJS" ? <FaReact/> : 
-  item == "Photoshop" ? <DiPhotoshop/> :
-  item == "SCSS" ? <DiSass/> :
-  item == "HTML" ? <DiHtml5/> :
-  item == "Vercel" ? <IoLogoVercel/> :
-  item == "Git" ? <FaGithub/> : 
-  item == "CSS" ? <FaCss3/> : ""
+  item === "ReactJS" ? <FaReact/> : 
+  item === "Photoshop" ? <DiPhotoshop/> :
+  item === "SCSS" ? <DiSass/> :
+  item === "HTML" ? <DiHtml5/> :
+  item === "Vercel" ? <IoLogoVercel/> :
+  item === "Git" ? <FaGithub/> : 
+  item === "CSS" ? <FaCss3/> : ""
   ;
   return(
     <div
@@ -435,28 +435,28 @@ function Works({children}){
               {' '}<a 
               onMouseOver={refsCard1[0][1]}
               onMouseLeave={refsCard1[0][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj4y-PEjuHvAhVXdGAKHQE_BfIYABAAGgJ0bQ&ae=2&ohost=www.google.com&cid=CAASE-RoHXJ0cmXi-lTEXe5CH2fEtHE&sig=AOD64_2jeIcdar4Cak4ya4VqkdlARnUmTA&q&adurl&ved=2ahUKEwiwmN3EjuHvAhXD7GEKHc2VBjQQ0Qx6BAgFEAE">
                 Photoshop
               </a>. 
               {' '}<a 
               onMouseOver={refsCard1[1][1]}
               onMouseLeave={refsCard1[1][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://en.wikipedia.org/wiki/HTML">
                 HTML
               </a>, and 
               {' '}<a 
               onMouseOver={refsCard1[2][1]}
               onMouseLeave={refsCard1[2][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://sass-lang.com/">
                 SCSS
               </a> for basics, and 
               {' '}<a 
               onMouseOver={refsCard1[3][1]}
               onMouseLeave={refsCard1[3][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://reactjs.org/">
                 ReactJS
               </a> for DOM Manipulation. The project is then saved in github.
@@ -464,14 +464,14 @@ function Works({children}){
               {' '}<a 
               onMouseOver={refsCard1[4][1]}
               onMouseLeave={refsCard1[4][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://github.com/">
                 Git
               </a> for easier updating of the source code and version control. Lastly, 
               {' '}<a 
               onMouseOver={refsCard1[5][1]}
               onMouseLeave={refsCard1[5][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://vercel.com/">
                 Vercel
               </a> serves as the domain server. 
@@ -503,7 +503,7 @@ function Works({children}){
           <WorksPopUp
             showPopUp={showPopUp2}
             setShowPopUp={setShowPopUp2}
-            title="single To Do"
+            title="Single To Do"
             pageLink="https://singletodo.vercel.app/">
             <div>
               A To Do List App. A user can add 1 item at a time. It only shows the user 1 random task after a task has been completed or ignored. The to do list is stored in the user's local storage to allow for persisting data.
@@ -513,28 +513,28 @@ function Works({children}){
               {' '}<a 
               onMouseOver={refsCard1[0][1]}
               onMouseLeave={refsCard1[0][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj4y-PEjuHvAhVXdGAKHQE_BfIYABAAGgJ0bQ&ae=2&ohost=www.google.com&cid=CAASE-RoHXJ0cmXi-lTEXe5CH2fEtHE&sig=AOD64_2jeIcdar4Cak4ya4VqkdlARnUmTA&q&adurl&ved=2ahUKEwiwmN3EjuHvAhXD7GEKHc2VBjQQ0Qx6BAgFEAE">
                 Photoshop
               </a>. 
               {' '}<a 
               onMouseOver={refsCard1[1][1]}
               onMouseLeave={refsCard1[1][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://en.wikipedia.org/wiki/HTML">
                 HTML
               </a>, and 
               {' '}<a 
               onMouseOver={refsCard1[2][1]}
               onMouseLeave={refsCard1[2][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://sass-lang.com/">
                 SCSS
               </a> for basics, and 
               {' '}<a 
               onMouseOver={refsCard1[3][1]}
               onMouseLeave={refsCard1[3][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://reactjs.org/">
                 ReactJS
               </a> for DOM Manipulation. The project is then saved in github.
@@ -542,14 +542,14 @@ function Works({children}){
               {' '}<a 
               onMouseOver={refsCard1[4][1]}
               onMouseLeave={refsCard1[4][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://github.com/">
                 Git
               </a> for easier updating of the source code and version control. Lastly, 
               {' '}<a 
               onMouseOver={refsCard1[5][1]}
               onMouseLeave={refsCard1[5][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://vercel.com/">
                 Vercel
               </a> serves as the domain server. 
@@ -581,7 +581,7 @@ function Works({children}){
           <WorksPopUp
             showPopUp={showPopUp3}
             setShowPopUp={setShowPopUp3}
-            title="PORTFOLIO"
+            title="Portfolio"
             pageLink="https://jexdls.github.io/">
             <div>
               My previous website portfolio.
@@ -591,21 +591,21 @@ function Works({children}){
               {' '}<a 
               onMouseOver={refsCard1[0][1]}
               onMouseLeave={refsCard1[0][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj4y-PEjuHvAhVXdGAKHQE_BfIYABAAGgJ0bQ&ae=2&ohost=www.google.com&cid=CAASE-RoHXJ0cmXi-lTEXe5CH2fEtHE&sig=AOD64_2jeIcdar4Cak4ya4VqkdlARnUmTA&q&adurl&ved=2ahUKEwiwmN3EjuHvAhXD7GEKHc2VBjQQ0Qx6BAgFEAE">
                 Photoshop
               </a>. 
               {' '}<a 
               onMouseOver={refsCard1[1][1]}
               onMouseLeave={refsCard1[1][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://en.wikipedia.org/wiki/HTML">
                 HTML
               </a>, and 
               {' '}<a 
               onMouseOver={refsCard1[2][1]}
               onMouseLeave={refsCard1[2][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://sass-lang.com/">
                 CSS
               </a> for basics. The project is then saved in github.
@@ -613,14 +613,14 @@ function Works({children}){
               {' '}<a 
               onMouseOver={refsCard1[4][1]}
               onMouseLeave={refsCard1[4][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://github.com/">
                 Git
               </a> for easier updating of the source code and version control. And, 
               {' '}<a 
               onMouseOver={refsCard1[4][1]}
               onMouseLeave={refsCard1[4][2]}
-              target="_blank" 
+              target="_blank" rel="noreferrer"
               href="https://github.com/">
                 GitHub Pages
               </a> is the domain server. 
@@ -718,7 +718,8 @@ function WorksPopUp({showPopUp, setShowPopUp, children, title, pageLink}){
           <a id="visit"
             className="font-mont px-3 py-2 my-3"
             href={pageLink} 
-            target="_blank">
+            target="_blank"
+            rel="noreferrer">
               Visit Page >  
           </a>
         </div>
@@ -780,7 +781,7 @@ function Details(){
         <DetailsElement spanDesc={"//visit"} pageLink="https://www.freecodecamp.org/jexdls" cusId="details_fcc">freeCodeCamp</DetailsElement>
         <DetailsElement spanDesc={"//visit"} pageLink="https://github.com/jexdls" cusId="details_github">GitHub</DetailsElement>
         <DetailsPopUp>
-          <DetailsElement spanDesc={"//copy to clipboard"} cusId="details_copy" >Email</DetailsElement>
+          <DetailsElement spanDesc={"//copy to clipboard"} cusId="details_copy" >Gmail</DetailsElement>
         </DetailsPopUp>
       </DetailsList>
     </Container>
@@ -811,7 +812,8 @@ function DetailsElement({children, spanDesc,pageLink, cusId}){
         ref={elementRef}
         href={pageLink}
         target="_blank"
-        onClick={ cusId == "details_copy" ? copyToClipboard("jexdelossantos2010@gmail.com") : ""}>
+        rel="noreferrer"
+        onClick={ cusId === "details_copy" ? copyToClipboard("jexdelossantos2010@gmail.com") : ""}>
         <div className="details-element font-righ">
           {children}<span className="font-righ">  {spanDesc}</span>
         </div>
@@ -821,22 +823,6 @@ function DetailsElement({children, spanDesc,pageLink, cusId}){
 }
 
 //POPUP COMPONENTS
-function CustomPopUp({children}){
-  return(
-    <div>
-      {children}
-    </div>
-    );
-
-}
-
-function CustomPopUpTitle({children}){
-  return(
-    <div>
-      {children}
-    </div>
-    );
-}
 
 
 function copyToClipboard(text){
@@ -854,10 +840,8 @@ function copyToClipboard(text){
 
 
 function DetailsPopUp({children}) {
-  const message ='clickie click';
   const [show, setShow] = useState(false);
   const target = useRef(null);
-  const [repeat, setRepeat] = useState(0);
 
   return (
     <>

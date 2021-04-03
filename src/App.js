@@ -779,7 +779,9 @@ function Details(){
         <DetailsElement spanDesc={"//visit"} pageLink="https://www.linkedin.com/in/jexdls"cusId="details_li">LinkedIn</DetailsElement>
         <DetailsElement spanDesc={"//visit"} pageLink="https://www.freecodecamp.org/jexdls" cusId="details_fcc">freeCodeCamp</DetailsElement>
         <DetailsElement spanDesc={"//visit"} pageLink="https://github.com/jexdls" cusId="details_github">GitHub</DetailsElement>
-        <DetailsElement spanDesc={"//copy to clipboard"} cusId="details_copy" >Email</DetailsElement>
+        <DetailsPopUp>
+          <DetailsElement spanDesc={"//copy to clipboard"} cusId="details_copy" >Email</DetailsElement>
+        </DetailsPopUp>
       </DetailsList>
     </Container>
     );
@@ -849,6 +851,36 @@ function copyToClipboard(text){
           body.removeChild(textArea);
       }
   };
+
+
+function DetailsPopUp({children}) {
+  const message ='clickie click';
+  const [show, setShow] = useState(false);
+  const target = useRef(null);
+  const [repeat, setRepeat] = useState(0);
+
+  return (
+    <>
+      <span ref={target} 
+        onClick={()=>{
+                    setShow(!show)
+                    setTimeout(()=>setShow(false), 4000);
+                  }}>
+              {children}   
+      </span>
+      <Overlay 
+        target={target.current} 
+        show={show} 
+        placement="top">
+        {(props) => (
+          <Tooltip id="overlay-example" {...props}>
+            copy success
+          </Tooltip>
+        )}
+      </Overlay>
+    </>
+  );
+}
 
 
 

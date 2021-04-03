@@ -175,7 +175,7 @@ function AboutMe({}){
             {/*   timer="5000"  */}
             {/*   label="computer engineering undergraduate"/> */}
               I’m a self taught React developer
-            and web designer.
+            and web designer. I aim to be a Full Stack developer using MERN as my preferred stack.
           </div>
           <div className="title font-mont">
              {"}"}
@@ -467,14 +467,14 @@ function Works({children}){
               target="_blank" 
               href="https://github.com/">
                 Git
-              </a> for easier updating of the source code and version control. And, 
+              </a> for easier updating of the source code and version control. Lastly, 
               {' '}<a 
               onMouseOver={refsCard1[5][1]}
               onMouseLeave={refsCard1[5][2]}
               target="_blank" 
               href="https://vercel.com/">
                 Vercel
-              </a> is the domain server. 
+              </a> serves as the domain server. 
             </div>
             <>
               <SpecItem item="ReactJS"  linkRefa1={refsCard1[3][0][0]} linkRefb1={refsCard1[3][0][1]}/>
@@ -506,7 +506,7 @@ function Works({children}){
             title="single To Do"
             pageLink="https://singletodo.vercel.app/">
             <div>
-              A To Do List App. A user can add 1 item at a time. It only shows the user 1 random task. The list is stored in the user's local storage to persist data.
+              A To Do List App. A user can add 1 item at a time. It only shows the user 1 random task after a task has been completed or ignored. The to do list is stored in the user's local storage to allow for persisting data.
             </div>
             <div>
               I created a wireframe using 
@@ -545,14 +545,14 @@ function Works({children}){
               target="_blank" 
               href="https://github.com/">
                 Git
-              </a> for easier updating of the source code and version control. And, 
+              </a> for easier updating of the source code and version control. Lastly, 
               {' '}<a 
               onMouseOver={refsCard1[5][1]}
               onMouseLeave={refsCard1[5][2]}
               target="_blank" 
               href="https://vercel.com/">
                 Vercel
-              </a> is the domain server. 
+              </a> serves as the domain server. 
             </div>
             <>
               <SpecItem item="ReactJS"  linkRefa1={refsCard1[3][0][0]} linkRefb1={refsCard1[3][0][1]}/>

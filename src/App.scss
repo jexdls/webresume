@@ -288,6 +288,9 @@ section{
   }
   a, a:hover{text-decoration: none;}
 }
+.tooltip-inner{
+  border: 1px solid $gray;
+}
 
 
 footer{

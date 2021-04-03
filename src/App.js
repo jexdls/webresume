@@ -874,7 +874,7 @@ function DetailsPopUp({children}) {
         placement="top">
         {(props) => (
           <Tooltip id="overlay-example" {...props}>
-            copy success
+            copy successful
           </Tooltip>
         )}
       </Overlay>

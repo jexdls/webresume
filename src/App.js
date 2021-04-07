@@ -776,7 +776,7 @@ function Details(){
           ref={elementRef}>{"<details/>"}</div>
       </Grow>
       <DetailsList>
-        <DetailsElement spanDesc={"//download pdf"} cusId="details_resume">Résumé</DetailsElement>
+        <DetailsElement spanDesc={"//open pdf"} pageLink="https://drive.google.com/file/d/1EOHPrwi5EYSLhPBmttSJBzqISv4txr0h/view?usp=sharing" cusId="details_resume">Résumé</DetailsElement>
         <DetailsElement spanDesc={"//visit"} pageLink="https://www.linkedin.com/in/jexdls"cusId="details_li">LinkedIn</DetailsElement>
         <DetailsElement spanDesc={"//visit"} pageLink="https://www.freecodecamp.org/jexdls" cusId="details_fcc">freeCodeCamp</DetailsElement>
         <DetailsElement spanDesc={"//visit"} pageLink="https://github.com/jexdls" cusId="details_github">GitHub</DetailsElement>
